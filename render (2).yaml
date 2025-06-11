@@ -1,0 +1,15 @@
+services:
+  - type: web
+    name: boss-analysis-api
+    env: python
+    plan: free
+
+    buildCommand: pip install -r requirements.txt
+
+    startCommand: gunicorn boss_analysis_zh:app
+
+    envVars:
+      - key: OPENAI_API_KEY
+        value: ${OPENAI_API_KEY}
+      - key: SMTP_PASSWORD
+        value: ${SMTP_PASSWORD}
