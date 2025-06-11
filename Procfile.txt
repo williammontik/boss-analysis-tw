@@ -1,0 +1,1 @@
+web: gunicorn boss_analysis_tw:app
